@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+/* === 이 3개는 고정 (수정 금지) ====================== */
+header {
+  border-bottom: 0.5px solid black;
+}
+
+.menu-txt.menuservies {
+  font-weight: bold;
+}
+
+/* 메인: 경계 박스 */
+main {
+  position: relative;                 
+  height: calc(100vh - 80px);
+  width: 90%;
+  margin: 80px auto 0;                
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;                   
+}
+
+/* 메인 안을 가득 채우는 레이어 */
+.servies {
+  position: absolute;
+  inset: 0;                          /* main 전체를 덮음 */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;             /* ⬅️ 하단 정렬 */
+  padding: 0 12px 16px;              /* 바닥에 살짝 여백 */
+  box-sizing: border-box;
+  min-height: 0;                     /* 내부 스크롤 대비 */
+}
+
+.servies header{position: absolute; height: 20%; padding-top: 50px;}
+.services-header{width: 100%;  }
+
+.services-header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 8px;
+  padding: 0;
+}
+
+.services-header h2,
+.services-header p {
+  display: block;
+  margin: 0;
+}
+
+.services-box {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;            /* 위: 헤더 / 아래: 그리드 */
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* 그리드: 3열 x 2행 */
+.services-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;   
+  box-sizing: border-box;
+  height: 70%;
+}
+
+/* 카드 */
+/* 카드 */
+.service-card {
+  position: relative;
+  background: #bfbfbf;
+  display: flex;                /* 중앙 정렬의 핵심 */
+  align-items: center;          /* 세로 가운데 */
+  justify-content: center;      /* 가로 가운데 */
+  text-align: center;           /* 텍스트 가운데 정렬 */
+}
+
+.service-card > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}
+
+/* 이미지 영역 (비율 4:3) */
+/* 이미지 영역 (배경으로 표시) */
+.service-card .media {
+  width: 100%; height: 100%;
+  background-size: cover;        /* 꽉 채우기 */
+  background-position: center;   /* 중앙 기준 */
+  background-repeat: no-repeat;
+}
+
+/* .services-grid .service-card:nth-child(1) .media {
+  background-image: url(../images/portfolio-1.jpeg);
+}
+.services-grid .service-card:nth-child(2) .media {
+  background-image: url(../images/portfolio-2.png);
+}
+.services-grid .service-card:nth-child(3) .media {
+  background-image: url(../images/portfolio-3.png);
+}
+.services-grid .service-card:nth-child(4) .media {
+  background-image: url(../images/portfolio-4.png);
+}
+.services-grid .service-card:nth-child(5) .media {
+  background-image: url(../images/portfolio-5.png);
+}
+.services-grid .service-card:nth-child(6) .media {
+  background-image: url(../images/portfolio-6.png);
+} */
+
+.service-card .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 제목을 가운데 */
+.card-title {
+  position: absolute;           /* 카드 중앙 배치용 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #000;                  /* 배경색에 따라 조정 가능 */
+  text-align: center;
+}
+
+/* 오버레이(호버 시 노출) */
+.card-overlay {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  padding: 18px; text-align: center;
+  background: rgba(0,0,0,0.55);
+  color: #fff; opacity: 0; transform: translateY(6px);
+  transition: opacity .28s ease, transform .28s ease;
+}
+.card-overlay p { line-height: 1.5; font-size: 0.95rem; }
+
+/* 호버: 상세 텍스트 표시 */
+.service-card:hover .card-overlay { opacity: 1; transform: translateY(0); }
+
+/* 접근성: 키보드 포커스 */
+.service-card > a:focus-visible .card-overlay { 
+  opacity: 1; transform: translateY(0); outline: none; 
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .services-header h2 { font-size: 1.1rem; }
+}

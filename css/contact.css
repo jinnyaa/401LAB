@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* === 이 3개는 고정 (수정 금지) ====================== */
+header {
+  border-bottom: 0.5px solid black;
+}
+
+.menu-txt.menucontact {
+  font-weight: bold;
+}
+
+/* 메인: 경계 박스 */
+main {
+  position: relative;                 
+  height: calc(100vh - 80px);
+  width: 90%;
+  margin: 80px auto 0;                
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;                   
+}
+
+.contact {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.contact-txt {
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.6;
+  color: #222;
+}
+.contact-txt a { color: inherit; text-decoration: underline; }
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  width: 100%;            /* 폼은 100% */
+  max-width: 560px;       /* 원하는 공통 폭 */
+  margin: 0 auto;         /* 가운데 정렬 */
+  box-sizing: border-box;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+label {
+  font-size: 0.95rem;
+  color: #404040;
+  text-align: left;
+}
+
+input, textarea, select {
+  width: 100%;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  padding: 5px 6px;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: border-color .2s ease, box-shadow .2s ease;
+  box-sizing: border-box;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #c03838;
+}
+textarea {
+  resize: none;          
+  min-height: 120px;      
+}
+
+.btn-send {
+  margin-top: 8px;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 22px;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-send:hover { opacity: 0.3; }
+
+.form-hint {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (max-width: 480px) {
+  .contact { width: 94%; }
+}

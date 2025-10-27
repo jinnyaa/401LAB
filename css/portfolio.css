@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+header {
+  border-bottom: 0.5px solid black;
+}
+
+.menu-txt.menuportfolio {
+  font-weight: bold;
+}
+
+main {
+  margin-top: 80px;
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-main {
+  width: 90%;
+  height: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.portfolio-list-row1,
+.portfolio-list-row2 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+
+.portfolio-list {
+  width: 18%;
+  aspect-ratio: 3 / 4;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.portfolio-list a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+/* 이미지 기본 상태 */
+.portfolio-list a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.portfolio-list.list1 a img{width: 110%; height: 110%;}
+.portfolio-list.list4 a img{width: 110%; height: 110%;}
+
+
+/* 텍스트 오버레이 (기본은 숨김) */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* hover 시 효과 */
+.portfolio-list:hover img {
+  filter: brightness(50%);
+  transform: scale(1.05);
+}
+
+.portfolio-list:hover .overlay-text {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
