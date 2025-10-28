@@ -37,12 +37,12 @@
 
 @media (max-width: 768px) {
   .home-main-images {
-    background-image: url('../images/모바일1.png');
+    background-image: url('../images/mo.png');
   }
 
 .home-main-contact li a {
   font-size: var(--title-size-md);
   font-weight: 900;
-
+  text-align: left;
 }
 }
