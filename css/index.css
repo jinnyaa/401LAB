@@ -43,6 +43,6 @@
 .home-main-contact li a {
   font-size: var(--title-size-md);
   font-weight: 900;
-  text-align: left;
+  text-align: right;
 }
 }
