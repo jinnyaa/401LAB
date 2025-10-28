@@ -17,7 +17,7 @@ header .go-to-top .logo {
 main {
   position: relative;                 
   height: calc(100vh - 80px);
-  width: 90%;
+  width: 85%;
   margin: 80px auto 0;                
 
   display: flex;
@@ -33,32 +33,28 @@ main {
   inset: 0;                          /* main 전체를 덮음 */
   display: flex;
   justify-content: center;
+  align-items: flex-end;             /* ⬅️ 하단 정렬 */
   box-sizing: border-box;
   min-height: 0;                     /* 내부 스크롤 대비 */
-  align-items: flex-start;     /* 하단 정렬 → 상단 정렬 */
 }
 
-.servies header{position: absolute; height: 20%; padding-top: 50px;}
-
-.services-header{
-  width: 100%;
+.servies header{position: absolute; height: 15%; margin-top: 60px; width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start; 
-  gap: 8px;
-  padding: 0;
-  z-index: 0;
-}
+  padding: 0; z-index: 0;}
+
+  .servies header h2{font-weight: 500; font-size: 1.2rem;}
+  .servies header div{font-weight: 200; font-size: 0.9rem;}
 
 .services-header h2,
 .services-header p {
   display: block;
   margin: 0;
 }
-
 .services-box {
   width: 100%;
-  height: 100%;
+  height: 70%;
   display: flex;
   flex-direction: column;            /* 위: 헤더 / 아래: 그리드 */
   gap: 16px;
@@ -71,11 +67,10 @@ main {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;   
+  gap: 13px;   
   box-sizing: border-box;
-  height: 50%;
+  height: 70%;
   padding: 0;
-  margin-top: 20%;
 }
 
 /* 카드 */
@@ -170,9 +165,31 @@ main {
 @media (max-width: 900px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .services-header{border-bottom: none;}
+  .servies header{position: absolute; height: 20%; }
+  .services-header div{font-size: 0.8rem;}
+  .services-header h2 { font-size: 1rem; }
+
 }
 @media (max-width: 768px) {
-  .services-grid { grid-template-columns: 1fr; height: 65%; margin-top: 52%;}
-  .services-box{font-size: 0.8rem;}
+  .services-grid { grid-template-columns: 1fr; }
+}
 
+
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.footer-txt {
+  color: #afafaf;
+  font-size: var(--desc-size-sxx);
 }
