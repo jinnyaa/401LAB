@@ -172,8 +172,7 @@ main {
   .services-header{border-bottom: none;}
 }
 @media (max-width: 768px) {
-  .services-grid { grid-template-columns: 1fr; height: 65%; margin-top: 55%;}
+  .services-grid { grid-template-columns: 1fr; height: 65%; margin-top: 52%;}
   .services-box{font-size: 0.8rem;}
-  .services-header{margin-top: 10px;}
 
 }
