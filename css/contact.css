@@ -3,6 +3,7 @@
 /* === 이 3개는 고정 (수정 금지) ====================== */
 header {
   border-bottom: 0.5px solid black;
+  background-color: #ffffff;
 }
 
 header .go-to-top .logo {
