@@ -63,44 +63,46 @@
     <div><a href="mailto:401lab.ai@gmail.com">401lab.ai@gmail.com</a></div>
   </div>
 
-  <form id="contactForm" class="contact-form">
-    <div class="field">
-      <label for="name">Name*</label>
-      <input id="name" name="name" type="text" required />
-    </div>
+   <form id="contactForm" class="contact-form">
+        <div class="field">
+          <label for="name">Name*</label>
+          <input id="name" name="from_name" type="text" required />
+        </div>
 
-    <div class="field">
-      <label for="email">Email*</label>
-      <input id="email" name="email" type="email" required />
-    </div>
+        <div class="field">
+          <label for="email">Email*</label>
+          <input id="email" name="reply_to" type="email" required />
+        </div>
 
-    <div class="field">
-      <label for="company">Company/Brand Name</label>
-      <input id="company" name="company" type="text" />
-    </div>
+        <div class="field">
+          <label for="company">Company/Brand Name</label>
+          <input id="company" name="company" type="text" />
+        </div>
 
-    <div class="field">
-      <label for="projectType">Project Type</label>
-      <select id="projectType" name="projectType">
-        <option value="">Select</option>
-        <option>Brand Visuals</option>
-        <option>Model</option>
-        <option>Product Photography</option>
-        <option>Prompt Design System</option>
-        <option>AI Motion & Video</option>
-        <option>Collaborations</option>
-      </select>
-     
-    </div>
+        <div class="field">
+          <label for="projectType">Project Type</label>
+          <select id="projectType" name="project_type">
+            <option value="">Select</option>
+            <option>Brand Visuals</option>
+            <option>Model</option>
+            <option>Product Photography</option>
+            <option>Prompt Design System</option>
+            <option>AI Motion & Video</option>
+            <option>Collaborations</option>
+          </select>
+        </div>
 
-    <div class="field">
-      <label for="message">Message*</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
-    </div>
+        <div class="field">
+          <label for="message">Message*</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
 
-    <button type="submit" class="btn-send">Send</button>
-    <p id="formHint" class="form-hint" aria-live="polite"></p>
-  </form>
+        <!-- 스팸 방지용 허니팟 -->
+        <input type="text" name="website" id="website" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off"/>
+
+        <button type="submit" class="btn-send">Send</button>
+        <p id="formHint" class="form-hint" aria-live="polite"></p>
+      </form>
 </section>
 
 </main>
@@ -110,7 +112,9 @@
     <footer>
         <div class="footer-txt">ⓒ401LAB.ALL RIGHT RESERVRED</div>
     </footer>
-    <script src="../js/contact.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="../js/contact.js"></script>
+</body>
 </svg>
 </body>
 </html>

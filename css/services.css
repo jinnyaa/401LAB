@@ -103,26 +103,27 @@ main {
   background-size: cover;        /* 꽉 채우기 */
   background-position: center;   /* 중앙 기준 */
   background-repeat: no-repeat;
+  border-radius: 5px;
 }
 
-/* .services-grid .service-card:nth-child(1) .media {
-  background-image: url(../images/portfolio-1.jpeg);
+.services-grid .service-card:nth-child(1) .media {
+  background-image: url(../images/4.png); filter: brightness(80%);
 }
 .services-grid .service-card:nth-child(2) .media {
-  background-image: url(../images/portfolio-2.png);
+  background-image: url(../images/8.png);filter: brightness(80%);
 }
 .services-grid .service-card:nth-child(3) .media {
-  background-image: url(../images/portfolio-3.png);
+  background-image: url(../images/3.png);filter: brightness(80%);
 }
 .services-grid .service-card:nth-child(4) .media {
-  background-image: url(../images/portfolio-4.png);
+  background-image: url(../images/7.png);filter: brightness(80%);
 }
 .services-grid .service-card:nth-child(5) .media {
-  background-image: url(../images/portfolio-5.png);
+  background-image: url(../images/1.png);filter: brightness(80%);
 }
 .services-grid .service-card:nth-child(6) .media {
-  background-image: url(../images/portfolio-6.png);
-} */
+  background-image: url(../images/5.png);filter: brightness(80%);
+}
 
 .service-card .media img {
   width: 100%;
@@ -139,7 +140,7 @@ main {
   transform: translate(-50%, -50%);
   font-weight: 700;
   font-size: 0.95rem;
-  color: #000;                  /* 배경색에 따라 조정 가능 */
+  color: #ffffff;                  /* 배경색에 따라 조정 가능 */
   text-align: center;
 }
 
@@ -148,7 +149,7 @@ main {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
   padding: 18px; text-align: center;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.753);
   color: #fff; opacity: 0; transform: translateY(6px);
   transition: opacity .28s ease, transform .28s ease;
   border-radius: 5px;

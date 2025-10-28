@@ -1,29 +1,41 @@
-  // 폼 제출 시 메일 앱 열기 (백엔드 없는 경우용)
-//   document.getElementById('contactForm')?.addEventListener('submit', function (e) {
-//     e.preventDefault();
+// EmailJS 초기화 (발급받은 Public Key 입력)
+emailjs.init({ publicKey: "4Ou4995_ukLWpckZe" });
 
-//     const name = encodeURIComponent(document.getElementById('name').value.trim());
-//     const email = encodeURIComponent(document.getElementById('email').value.trim());
-//     const company = encodeURIComponent(document.getElementById('company').value.trim());
-//     const project = encodeURIComponent(document.getElementById('projectType').value.trim());
-//     const message = encodeURIComponent(document.getElementById('message').value.trim());
+const form = document.getElementById("contactForm");
+const hint = document.getElementById("formHint");
 
-//     const subject = `[Contact] ${decodeURIComponent(name) || 'No name'} / ${decodeURIComponent(company) || 'No company'}`;
-//     const body =
-// `Name: ${decodeURIComponent(name)}
-// Email: ${decodeURIComponent(email)}
-// Company/Brand: ${decodeURIComponent(company)}
-// Project Type: ${decodeURIComponent(project)}
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-// Message:
-// ${decodeURIComponent(message)}`;
+  // 허니팟 체크
+  if (document.getElementById("website").value.trim() !== "") {
+    hint.textContent = "Submission blocked.";
+    return;
+  }
 
-//     const mailto = `mailto:401lab.ai@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-//     window.location.href = mailto;
+  hint.textContent = "Sending...";
+  const btn = form.querySelector(".btn-send");
+  btn.disabled = true;
 
-//     const hint = document.getElementById('formHint');
-//     if (hint) hint.textContent = '메일 앱이 열리지 않는다면 위 주소로 직접 메일을 보내주세요: 401lab.ai@gmail.com';
-//   });
+  try {
+    await emailjs.send("service_phytk7k", "template_vofi7ba", {
+      from_name: form.from_name.value,
+      reply_to: form.reply_to.value,
+      company: form.company.value,
+      project_type: form.project_type.value,
+      message: form.message.value,
+    });
+
+    hint.textContent = "Thank you — your message has been sent.";
+    form.reset();
+  } catch (error) {
+    console.error(error);
+    hint.textContent = "Error sending. Please try again.";
+  } finally {
+    btn.disabled = false;
+  }
+});
+
 
 
 // 모바일 메뉴 토글
