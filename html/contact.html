@@ -30,30 +30,31 @@
 </head>
 <body>
     <header>
-        <div class="go-to-top">
-            <!-- <a href="./index.html"><img src="./images/logo_black.png" alt="logo"></a> -->
-            <a href="../index.html"><img src="../images/logo_black.png" alt="logo"></a>
-        </div>
+    <div class="go-to-top">
+      <!-- 로고는 CSS 배경이미지로 교체됨 -->
+      <a href="../index.html" class="logo" aria-label="401LAB"></a>
+    </div>
 
-        <ul class="menu active">
-       <li class="menu-txt menuhome"><a href="../index.html">Home</a></li>
-            <li class="menu-txt menuportfolio"><a href="./portfolio.html">Portfolio</a></li>
-            <li class="menu-txt menuservies"><a href="./services.html">Servies</a></li>
-            <li class="menu-txt menucontact"><a href="./contact.html">Contact</a></li>
-        </ul>
+    <!-- 데스크톱 메뉴 -->
+    <ul class="menu active">
+      <li class="menu-txt menuhome"><a href="../index.html">Home</a></li>
+      <li class="menu-txt menuportfolio"><a href="./portfolio.html">Portfolio</a></li>
+      <li class="menu-txt menuservies"><a href="./services.html">Services</a></li>
+      <li class="menu-txt menucontact"><a href="./contact.html">Contact</a></li>
+    </ul>
 
-        <!-- <div class="nav-menu">
-                Menu
-        </div>
-         <div class="menu-show">
-                <div class="menu-wrap">
-                    <a href="./index.html"><h5>Home</h5></a>
-                    <a href="./index.html"><h5>Portfolio</h5></a>
-                    <a href="./index.html"><h5>Servies</h5></a>
-                    <a href="./index.html"><h5>Contact</h5></a>
-                </div>
-        </div> -->
-    </header>
+    <!-- 모바일: JS로 토글 -->
+    <button class="menu-toggle" id="menu-btn" aria-expanded="false" aria-controls="mobile-drawer">MENU</button>
+
+    <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile menu">
+      <ul class="mobile-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./portfolio.html">Portfolio</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
 <main>
 <section class="contact">
@@ -109,7 +110,7 @@
     <footer>
         <div class="footer-txt">ⓒ401LAB.ALL RIGHT RESERVRED</div>
     </footer>
-    <script src="./js/contact.js"></script>
+    <script src="../js/contact.js"></script>
 </svg>
 </body>
 </html>

@@ -5,6 +5,10 @@ header {
   border-bottom: 0.5px solid black;
 }
 
+header .go-to-top .logo {
+  background-image: url('../images/logo_black.png');
+}
+
 .menu-txt.menucontact {
   font-weight: bold;
 }

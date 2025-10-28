@@ -2,6 +2,10 @@
 
 header {
   border-bottom: 0.5px solid black;
+  background-color: #ffffff;
+}
+header .go-to-top .logo {
+  background-image: url('../images/logo_black.png');
 }
 
 .menu-txt.menuportfolio {
@@ -89,3 +93,35 @@ main {
   opacity: 1;
   transform: translate(-50%, -50%);
 }
+
+/* ===== 모바일 버전 (한 줄 정렬) ===== */
+@media (max-width: 768px) {
+  .portfolio-main {
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .portfolio-list-row1,
+  .portfolio-list-row2 {
+    flex-direction: column;   /* 세로로 배치 */
+    gap: 10px;                /* 이미지 간 간격 */
+  }
+   .portfolio-list-row2 {margin-top: 10px;}
+
+  .portfolio-list {
+    width: 90%;               /* 모바일 화면 폭 기준 크기 */
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;           /* 가운데 정렬 */
+  }
+
+  .portfolio-list a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .overlay-text {
+    font-size: 1rem;
+  }
+}
+
