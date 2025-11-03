@@ -7,5 +7,7 @@
 			"path": "../Jinny_Portfolio"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "401lab"
+	}
 }
